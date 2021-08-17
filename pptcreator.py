@@ -1,6 +1,4 @@
 from pptx import Presentation
-from wand.image import Image, COMPOSITE_OPERATORS
-from wand.drawing import Drawing
 
 # PRESENTATION OBJECT
 prs = Presentation()
@@ -27,8 +25,6 @@ slidecaptions = ["Plants in a house", "Tasty!", "Aesthetically Awesome ", "Too E
 
 # Generating Slides Programmatically on a loop
 for i in range(1, 6):
-    logo = Image(filename="nike_black.png")
-    img = Image(filename="image"+str(i)+'.jpg')
     eachslide = prs.slides.add_slide(image_slide_layout)
     eachslide_title = eachslide.placeholders[0]
     eachslide_pic = eachslide.placeholders[1].insert_picture("image_"+str(i)+'.png')
